@@ -82,11 +82,6 @@ resource "aws_s3_bucket_public_access_block" "mys3ownership" {
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_acl" "myacl" {
-  bucket = aws_s3_bucket.myS3.id
-  acl    = "public-read"
-}
-
 resource "aws_instance" "webserver1" {
   ami = "ami-07c589821f2b353aa"
   instance_type = "t2.micro"
